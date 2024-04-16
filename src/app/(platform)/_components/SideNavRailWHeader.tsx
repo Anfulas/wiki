@@ -80,6 +80,9 @@ export const SideNavRailWHeader = (args: any) => <HeaderContainer render={({
             <SideNavLink as={AppLink} renderIcon={LogoOpenshift} {...{ href: "/openshiftmongo" }}>
               OC Mongo Installation
             </SideNavLink>
+            <SideNavLink as={AppLink} renderIcon={LogoOpenshift} {...{ href: "/appcconnctor" }}>
+              CP4I Appc Connector
+            </SideNavLink>
           </SideNavMenu>
 
           <SideNavLink as={AppLink} renderIcon={IbmMq} {...{ href: "/mq" }}>
