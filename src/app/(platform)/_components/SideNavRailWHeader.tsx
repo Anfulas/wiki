@@ -1,6 +1,5 @@
-import { Fade, Notification, Search, Switcher as SwitcherIcon, UserMultiple } from '@carbon/icons-react';
+import { Fade, Notification, Search, Switcher as SwitcherIcon, IbmCloudEventStreams, IbmMq, LogoOpenshift } from '@carbon/icons-react';
 import {
-  ExpandableSearch,
   Header, HeaderContainer,
   HeaderGlobalAction,
   HeaderGlobalBar,
@@ -9,18 +8,11 @@ import {
   HeaderMenuItem,
   HeaderName,
   HeaderNavigation,
-  HeaderPanel,
   HeaderSideNavItems,
   SideNav,
-  SideNavDivider,
   SideNavItems,
-  SideNavLink,
-  SideNavMenu,
-  SideNavMenuItem,
-  SkipToContent,
-  Switcher,
-  SwitcherDivider,
-  SwitcherItem
+  SideNavLink, SideNavMenu, SideNavMenuItem,
+  SkipToContent
 } from "@carbon/react";
 import { AppLink } from './AppLink';
 
@@ -28,13 +20,12 @@ export const SideNavRailWHeader = (args: any) => <HeaderContainer render={({
   isSideNavExpanded,
   onClickSideNavExpand
 }) => <>
-    <Header aria-label="IBM Platform Name">
+    <Header aria-label="MY WIKI">
       <SkipToContent />
       <HeaderMenuButton aria-label={isSideNavExpanded ? 'Close menu' : 'Open menu'} onClick={onClickSideNavExpand} isActive={isSideNavExpanded} aria-expanded={isSideNavExpanded} />
-      <HeaderName href="#" prefix="IBM">
-        [Platform]
+      <HeaderName href="#" prefix="MY WIKI">
       </HeaderName>
-      <HeaderNavigation aria-label="IBM [Platform]">
+      <HeaderNavigation aria-label="MY WIKI">
         <HeaderMenuItem href="#">Link 1</HeaderMenuItem>
         <HeaderMenuItem href="#">Link 2</HeaderMenuItem>
         <HeaderMenuItem href="#">Link 3</HeaderMenuItem>
@@ -46,7 +37,7 @@ export const SideNavRailWHeader = (args: any) => <HeaderContainer render={({
       </HeaderNavigation>
       <HeaderGlobalBar>
         <HeaderGlobalAction aria-label="Search" onClick={action('search click')}>
-        <Search size={20} />
+          <Search size={20} />
         </HeaderGlobalAction>
         <HeaderGlobalAction aria-label="Notifications" onClick={action('notification click')}>
           <Notification size={20} />
@@ -67,7 +58,7 @@ export const SideNavRailWHeader = (args: any) => <HeaderContainer render={({
               <HeaderMenuItem href="#">Sub-link 3</HeaderMenuItem>
             </HeaderMenu>
           </HeaderSideNavItems>}
-          <SideNavMenu renderIcon={Fade} title="Category title">
+          {/* <SideNavMenu renderIcon={Fade} title="Backup Catlog">
             <SideNavMenuItem {...{ href: "/" }} >
               Link
             </SideNavMenuItem>
@@ -77,34 +68,25 @@ export const SideNavRailWHeader = (args: any) => <HeaderContainer render={({
             <SideNavMenuItem {...{ href: "/" }}>
               Link
             </SideNavMenuItem>
+          </SideNavMenu> */}
+
+          <SideNavMenu renderIcon={LogoOpenshift} title="OpenShift">
+            <SideNavLink as={AppLink} renderIcon={LogoOpenshift} {...{ href: "/openshift" }}>
+              OC Environment
+            </SideNavLink>
+            <SideNavLink as={AppLink} renderIcon={LogoOpenshift} {...{ href: "/openshiftcommand" }}>
+              OC Command
+            </SideNavLink>
+            <SideNavLink as={AppLink} renderIcon={LogoOpenshift} {...{ href: "/openshiftmongo" }}>
+              OC Mongo Installation
+            </SideNavLink>
           </SideNavMenu>
-          <SideNavMenu renderIcon={Fade} title="Category title">
-            <SideNavMenuItem {...{ href: "/" }}>
-              Link
-            </SideNavMenuItem>
-            <SideNavMenuItem aria-current="page" {...{ href: "/" }}>
-              Link
-            </SideNavMenuItem>
-            <SideNavMenuItem {...{ href: "/" }}>
-              Link
-            </SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavMenu renderIcon={Fade} title="Category title">
-            <SideNavMenuItem {...{ href: "/" }}>
-              Link
-            </SideNavMenuItem>
-            <SideNavMenuItem {...{ href: "/" }}>
-              Link
-            </SideNavMenuItem>
-            <SideNavMenuItem {...{ href: "/" }}>
-              Link
-            </SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavLink as={AppLink} renderIcon={UserMultiple} {...{ href: "/users" }}>
-            Users
+
+          <SideNavLink as={AppLink} renderIcon={IbmMq} {...{ href: "/mq" }}>
+            MQ
           </SideNavLink>
-          <SideNavLink as={AppLink} renderIcon={Fade} {...{ href: "/brand" }}>
-            Brand
+          <SideNavLink as={AppLink} renderIcon={IbmCloudEventStreams} {...{ href: "/eventstream" }}>
+            EventSteam
           </SideNavLink>
         </SideNavItems>
       </SideNav>

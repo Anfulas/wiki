@@ -1,19 +1,23 @@
-// import { auth } from "@/auth"
-// import { SessionProvider } from "next-auth/react"
-// import ContextLayout from './ContextLayout'
-// import WrapLayoutComponent from './_components/WrapLayout';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import "./carbon.scss";
 
-// export default async function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode
-// }) {
-//   const session = await auth()
-//   return (
-//     <SessionProvider session={session}>
-//       <ContextLayout>
-//         <WrapLayoutComponent>{children}</WrapLayoutComponent>
-//       </ContextLayout>
-//     </SessionProvider>
-//   )
-// }
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "WIKI",
+  description: "My WiKI",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
+}
