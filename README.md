@@ -1,5 +1,5 @@
 ## only do it once:
-# yarn
+### yarn
 
 ## then
-# 
+### yarn dev or npm start
