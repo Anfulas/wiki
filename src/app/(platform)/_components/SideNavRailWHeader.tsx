@@ -1,4 +1,4 @@
-import { Fade, Notification, Search, Switcher as SwitcherIcon, IbmCloudEventStreams, IbmMq, LogoOpenshift } from '@carbon/icons-react';
+import { Fade, Notification, Search, Switcher as SwitcherIcon, IbmCloudEventStreams, IbmMq, LogoOpenshift, PlanePrivate } from '@carbon/icons-react';
 import {
   Header, HeaderContainer,
   HeaderGlobalAction,
@@ -69,6 +69,13 @@ export const SideNavRailWHeader = (args: any) => <HeaderContainer render={({
               Link
             </SideNavMenuItem>
           </SideNavMenu> */}
+
+          <SideNavMenu renderIcon={PlanePrivate} title="RX related">
+            <SideNavMenuItem {...{ href: "/rx" }} >
+              RX Environment
+            </SideNavMenuItem>
+
+          </SideNavMenu>
 
           <SideNavMenu renderIcon={LogoOpenshift} title="OpenShift">
             <SideNavLink as={AppLink} renderIcon={LogoOpenshift} {...{ href: "/openshift" }}>
