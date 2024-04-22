@@ -74,6 +74,9 @@ export const SideNavRailWHeader = (args: any) => <HeaderContainer render={({
             <SideNavMenuItem {...{ href: "/rx" }} >
               RX Environment
             </SideNavMenuItem>
+            <SideNavMenuItem {...{ href: "/rxcicd" }} >
+              RX CICD
+            </SideNavMenuItem>
 
           </SideNavMenu>
 
