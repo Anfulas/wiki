@@ -25,7 +25,14 @@ const openshiftmongo = () => {
       Password - N5Jn3UIO1zWe8IozQj41noCPAI5oIJlN`} />
       <br></br>
 
-      
+      <h4>Dev</h4>
+       <p>https://integration-pn-pn-cp4i.apps.clstr02.dev.rx.int/</p>
+       <p>https://console-openshift-console.apps.clstr02.dev.rx.int/</p>
+       <p>Username - admin   Password - N5Jn3UIO1zWe8IozQj41noCPAI5oIJlN</p>
+      <br></br>
+
+      <h4>Pre-Pro</h4>
+        <p>https://console-openshift-console.apps.neuuaroclstr02.uat.rx.int/</p>
 
 
     </div>
