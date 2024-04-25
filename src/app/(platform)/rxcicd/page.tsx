@@ -216,6 +216,157 @@ spec:
             name: task-ws
             `} />
       <br></br>
+
+      <TextArea labelText="List User"  rows={10} id="rx" 
+      value={`
+        Lists user registries.(use sandbox-catalog registry and sandbox-idp identity_providers)
+        {{baseUrl}}/orgs/:org/user-registries
+
+        Lists users.
+        {{baseUrl}}/user-registries/:org/:user-registry/users
+
+
+        Creates a user under sandbox-catalog registry
+        {{baseUrl}}/user-registries/:org/:user-registry/users
+
+        curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/user-registries/flyr/sandbox-catalog/users' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{"name":"pipeline-user","title":"pipeline-user","state":"enabled","identity_provider":"sandbox-idp","username":"pipeline-user","password":"huan1234.."}'
+
+
+        Returns a user.
+        {{baseUrl}}/user-registries/:org/:user-registry/users/:user
+
+        https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/user-registries/3b119a2b-c537-4760-aa89-46d06026eaea/a09a4278-6def-4e66-b30a-445cbae4b009/users/6685c5e4-1594-4310-bdae-cc9c3d3eab33
+      `} />
+      <br></br>
+
+      <TextArea labelText="Lists consumer organizations."  rows={10} id="rx" 
+      value={`
+        Lists consumer organizations.
+        {{baseUrl}}/catalogs/:org/:catalog/consumer-orgs
+
+        Creates a consumer organization.
+        {{baseUrl}}/catalogs/:org/:catalog/consumer-orgs
+
+
+        curl -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/catalogs/flyr/sandbox/consumer-orgs' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{"name":"pipeline-test-org","title":"Pipeline Test Organization","owner_url":"https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/user-registries/3b119a2b-c537-4760-aa89-46d06026eaea/a09a4278-6def-4e66-b30a-445cbae4b009/users/6685c5e4-1594-4310-bdae-cc9c3d3eab33","state":"enabled"}'
+
+        Returns a consumer organization.
+        {{baseUrl}}/consumer-orgs/:org/:catalog/:consumer-org
+
+        https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/consumer-orgs/3b119a2b-c537-4760-aa89-46d06026eaea/005c81af-7991-463a-907d-674d3d88dce5/def0db0d-7d30-46e4-92e5-b9d9e5e9830f
+            
+            `} />
+      <br></br>
+
+      <TextArea labelText="Consumer APP"  rows={10} id="rx" 
+      value={`
+      Lists consumer apps.
+      {{baseUrl}}/consumer-orgs/:org/:catalog/:consumer-org/apps
+      
+      Creates a consumer app.
+      {{baseUrl}}/consumer-orgs/:org/:catalog/:consumer-org/apps
+      
+      curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/consumer-orgs/flyr/sandbox/pipeline-test-org/apps' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{
+          "name": "pipeline-test-app",
+          "title": "Pipeline Test App",
+          "summary": "Default Pipeline test application",
+          "state": "enabled"
+      }'
+      
+      Lists app credentials.
+      {{baseUrl}}/apps/:org/:catalog/:consumer-org/:app/credentials
+      
+      curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/apps/flyr/sandbox/pipeline-test-org/pipeline-test-app/credentials' -H 'Accept: application/json' -H $token  
+            `} />
+      <br></br>
+
+      <TextArea labelText="Consumer APP"  rows={10} id="rx" 
+      value={`
+      Lists consumer apps.
+      {{baseUrl}}/consumer-orgs/:org/:catalog/:consumer-org/apps
+      
+      Creates a consumer app.
+      {{baseUrl}}/consumer-orgs/:org/:catalog/:consumer-org/apps
+      
+      curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/consumer-orgs/flyr/sandbox/pipeline-test-org/apps' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{
+          "name": "pipeline-test-app",
+          "title": "Pipeline Test App",
+          "summary": "Default Pipeline test application",
+          "state": "enabled"
+      }'
+      
+      Lists app credentials.
+      {{baseUrl}}/apps/:org/:catalog/:consumer-org/:app/credentials
+      
+      curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/apps/flyr/sandbox/pipeline-test-org/pipeline-test-app/credentials' -H 'Accept: application/json' -H $token  
+            `} />
+      <br></br>
+
+      
+      <TextArea labelText="Lists Subscriptions"  rows={10} id="rx" 
+      value={`
+      Lists subscriptions.
+      {{baseUrl}}/apps/:org/:catalog/:consumer-org/:app/subscriptions
+
+    Creates a subscription.
+    {{baseUrl}}/apps/:org/:catalog/:consumer-org/:app/subscriptions
+
+    curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/apps/flyr/sandbox/pipeline-test-org/pipeline-test-app/subscriptions' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{"name":"pipeline-product","title":"pipeline-product","product_url":"https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/catalogs/3b119a2b-c537-4760-aa89-46d06026eaea/005c81af-7991-463a-907d-674d3d88dce5/products/508d856b-38bb-407d-908d-fc164a759558","plan":"default-plan","plan_title":"Default Plan"}'
+
+    Clears subscriptions.
+    {{baseUrl}}/apps/:org/:catalog/:consumer-org/:app/subscriptions?confirm=pipeline-test-org
+      `} />
+      <br></br>
+
+
+      <h3> create a user (pipeline-user)</h3>
+      <TextArea labelText="Lists Subscriptions"  rows={10} id="rx" 
+      value={`
+      curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/user-registries/flyr/sandbox-catalog/users' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{"name":"pipeline-user","title":"pipeline-user","state":"enabled","identity_provider":"sandbox-idp","username":"pipeline-user","password":"huan1234.."}'
+      `} />
+      <br></br>
+
+      <h3> create one consumer org (pipeline-test-org)</h3>
+      <TextArea labelText="Lists Subscriptions"  rows={10} id="rx" 
+      value={`
+      curl -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/catalogs/flyr/sandbox/consumer-orgs' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{"name":"pipeline-test-org","title":"Pipeline Test Organization","owner_url":"https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/user-registries/3b119a2b-c537-4760-aa89-46d06026eaea/a09a4278-6def-4e66-b30a-445cbae4b009/users/6685c5e4-1594-4310-bdae-cc9c3d3eab33","state":"enabled"}'curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/user-registries/flyr/sandbox-catalog/users' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{"name":"pipeline-user","title":"pipeline-user","state":"enabled","identity_provider":"sandbox-idp","username":"pipeline-user","password":"huan1234.."}'
+      `} />
+      <br></br>
+
+      <h3> create one application (pipeline-test-app)</h3>
+      <TextArea labelText="Lists Subscriptions"  rows={10} id="rx" 
+      value={`
+      curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/consumer-orgs/flyr/sandbox/pipeline-test-org/apps' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{
+          "name": "pipeline-test-app",
+        "title": "Pipeline Test App",
+        "summary": "Default Pipeline test application",
+        "state": "enabled"
+    }'`} />
+      <br></br>
+
+      <h3> create one subscription</h3>
+      <TextArea labelText="Lists Subscriptions"  rows={10} id="rx" 
+      value={`
+      curl -k -L 'https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/apps/flyr/sandbox/pipeline-test-org/pipeline-test-app/subscriptions' -H 'Content-Type: application/json' -H 'Accept: application/json' -H  "Authorization: Bearer $token" -d '{"name":"pipeline-product","title":"pipeline-product","product_url":"https://cpd-cp4i.apps.65feb6cf03ade6001e899f7e.cloud.techzone.ibm.com/integration/apis/cp4i/api-management/api/catalogs/3b119a2b-c537-4760-aa89-46d06026eaea/005c81af-7991-463a-907d-674d3d88dce5/products/508d856b-38bb-407d-908d-fc164a759558","plan":"default-plan","plan_title":"Default Plan"}'`} />
+      <br></br>
+
+      <h3> Some useful links</h3>
+      <TextArea labelText="Lists Subscriptions"  rows={10} id="rx" 
+      value={`
+      Provider APIs: https://apic-api.apiconnect.ibmcloud.com/v10/#/IBMAPIConnectPlatformProviderAPI_200/overview
+        Cloud APIs: https://apic-api.apiconnect.ibmcloud.com/v10/#/IBMAPIConnectPlatformCloudManagementAPI_200/overview
+        Analytics APIs: https://apic-api.apiconnect.ibmcloud.com/v10/#/IBMAPIConnectAnalyticsAPI_200/overview
+        curl -L 'https://cpd-integration.apps.65fc029a1ba90d001e7bf43a.cloud.techzone.ibm.com/integration/apis/cp4i/apic/api/token' -H 'Content-Type: application/json' -H 'Accept: application/json' -d '{
+        "grant_type": "password",
+        "username": "hwang7",
+        "password": "hao1234..",
+        "realm": "provider/default-idp-2",
+        "client_id": "app1id",
+        "client_secret": "app1secret"
+        }'
+      `} />
+      <br></br>
+
     </div>
 
     
