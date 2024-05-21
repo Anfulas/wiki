@@ -15,9 +15,9 @@ const openshift = () => {
         <p>hwang@riyadhair.com	wh19950829+-yun</p>
       <br></br>
       <h4>Techzone OpenShift</h4>
-        <p> https://console-openshift-console.apps.65fc029a1ba90d001e7bf43a.cloud.techzone.ibm.com </p>
+        <p>  https://console-openshift-console.apps.664af64f48f8b9001f859725.cloud.techzone.ibm.com </p>
         <p> -username: kubeadmin</p>
-        <p> -password: UAuRP-PPuwq-RmHT6-oABTY</p>
+        <p> -password: IUcYS-6IjIa-IuSih-BEoMx</p>
         <br></br>
       <h4> CP4I </h4>
         <p>https://cpd-integration.apps.65fc029a1ba90d001e7bf43a.cloud.techzone.ibm.com</p>
